@@ -33,7 +33,7 @@
           <li><a href ="#"></a> Acerca de Nosotros </a></li>
           <li><a href ="{% url 'apps.posts:posts' %}"> Posts </a></li>
           <li><a href ="{% url 'apps.contacto:contacto' %}"> Contacto </a></li>
-          {% if user.is_autenticated %}
+          {% if user.is_authenticated %}
           <li><a href ="{% url 'apps.usuario:logout' %}"> Logout </a></li>
           {% else %}
           <li><a href ="{% url 'apps.usuario:login' %}"> Login </a></li>
