@@ -2,6 +2,7 @@ from .models import Usuario
 from django.contrib.auth.forms import UserCreationForm
 from django import forms
 from django.contrib.auth import authenticate, login
+from django.contrib import messages
 
 
 class RegistroUsuarioForm(UserCreationForm):
@@ -22,3 +23,5 @@ class LoginForm(forms.Form):
         user = authenticate(request, username=username, password=password)
         if user:
             login(request, user)
+        else:
+            messages.error(request, 'Nombre de usuario o contraseña incorrectos.')
